@@ -13,7 +13,12 @@ export const Filtros = styled.div`
   margin-top: 16px;
 `
 
-export const Campo = styled.div`
+interface InputProps {
+  type: string
+  placeholder: string
+}
+
+export const input = styled.input`
   padding: 8px;
   background-color: #fff;
   border-radius: 8px;
