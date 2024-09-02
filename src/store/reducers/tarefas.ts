@@ -7,7 +7,7 @@ const tarefasSlice = createSlice({
   initialState: [
     new tarefa(
       'estudar javaScript',
-      enums.Prioridade.importante,
+      enums.Prioridade.IMPORTANTE,
       enums.Status.PENDENTE,
       '',
       1
@@ -29,14 +29,14 @@ const tarefasSlice = createSlice({
   ],
   reducers: {
     remover: (state, action: PayloadAction<number>) => {
-      const index = state.findIndex((tarefa) => tarefa.id === action.payload);
+      const index = state.findIndex((tarefa) => tarefa.id === action.payload)
       if (index !== -1) {
-        state.splice(index, 1);
+        state.splice(index, 1)
       }
     }
   }
-});
+})
 
-export const { remover } = tarefasSlice.actions;
+export const { remover } = tarefasSlice.actions
 
-export default tarefasSlice.reducer;
+export default tarefasSlice.reducer

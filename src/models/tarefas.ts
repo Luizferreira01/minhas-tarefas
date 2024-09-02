@@ -7,7 +7,7 @@ class tarefa {
   descricao!: string
   id: number | undefined
 
-  Constructor(
+  constructor(
     titulo: string,
     prioridade: enums.Prioridade,
     status: enums.Status,
