@@ -3,17 +3,21 @@ import { useSelector } from 'react-redux'
 import Tarefa from '../components/Tarefa'
 import { Container } from './styles'
 import * as enums from '../../utils/enumns/tarefa'
-import { useStyleSheetContext } from 'styled-components/dist/models/StyleSheetManager'
+
+import { RootReducer } from '../../store'
 
 const ListaDeTarefas = () => {
-  useSelector
+  const { tarefas } = useSelector((state: RootReducer) => state)
+
   return (
-    <container>
-      <p>2 tarefas marcadas como: &quot;categoria&ldquo; e &quot;termo&ldquo;</p>
+    <Container>
+      <p>
+        2 tarefas marcadas como: &quot;categoria&ldquo; e &quot;termo&ldquo;
+      </p>
       <ul>
         {tarefas.map((t) => (
           <li key={t.titulo}>
-            <Tarefa>
+            <Tarefa
               descricao={t.descricao}
               titulo={t.titulo}
               status={t.status}
@@ -22,7 +26,7 @@ const ListaDeTarefas = () => {
           </li>
         ))}
       </ul>
-    </container>
+    </Container>
   )
 }
 export default ListaDeTarefas
