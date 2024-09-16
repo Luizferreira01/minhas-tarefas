@@ -4,18 +4,18 @@ import * as S from './styles'
 import * as enums from '../../../utils/enumns/tarefa'
 
 type Props = {
-  titulo: string
+  Titulo: string
   prioridade: enums.Prioridade
   status: enums.Status
   descricao: string
 }
 
-const Tarefa = ({ descricao, prioridade, status, titulo }: Props) => {
+const Tarefa = ({ descricao, prioridade, status, Titulo }: Props) => {
   const [estaEditando, setEstaEdiatando] = useState(false)
 
   return (
     <S.Card>
-      <S.Titulo>{titulo}</S.Titulo>
+      <S.Titulo>{Titulo}</S.Titulo>
       <S.Tag parametro="prioridade" prioridade={prioridade}>
         {prioridade}
       </S.Tag>
